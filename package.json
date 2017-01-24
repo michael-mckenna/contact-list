@@ -27,6 +27,7 @@
     "express": "^4.13.3",
     "mongodb": "^2.0.43",
     "passport": "^0.2.0",
+    "express-session": "~1.0.4",
     "passport-facebook": "^1.0.3",
     "passport-google": "^0.3.0",
     "passport-local": "^1.0.0",
