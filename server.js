@@ -58,7 +58,9 @@ function handleError(res, reason, message, code) {
  */
 
 app.get("/contacts", function(req, res) {
-  console.log(url.parse(req.url).pathname);
+  var hostname = req.headers.host; // hostname = 'localhost:8080'
+  var pathname = url.parse(req.url).pathname; // pathname = '/MyApp'
+console.log('http://' + hostname + pathname);
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
