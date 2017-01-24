@@ -58,7 +58,7 @@ function handleError(res, reason, message, code) {
  */
 
 app.get("/contacts", function(req, res) {
-  console.log(req);
+  console.log(url.parse(req.url).pathname);
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
